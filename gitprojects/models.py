@@ -14,6 +14,7 @@ class Project(models.Model):
 
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
                                        # blank=True so that it is not a requirement to select category when adding a project
+                                       # on_delete=models.SET_NULL AND null=True, go together
     image = models.ImageField(null=False, blank=False)
     # description = models.CharField(max_length=200, null=False, blank=False)
     description = models.TextField()
