@@ -76,11 +76,7 @@
     <div class="container-fluid" >
         <p style="color: aliceblue;">Many Kenyans yesterday turned to social media to express their frustrations, with some of the new requirements for registration, as others questioned the motive behind the directive, as well as its timing.
 
-            “Please, post here the exact instructions from CA so that we are sure you are not being overzealous about a very simple direction,” Kenya’s High Commissioner to the United Kingdom Manoah Esipisu posted on his Twitter handle, tagging Safaricom.
-            
-            Mobile service providers continued to witness long queues as Kenyans lined up in different registration centres in the capital Nairobi and in other parts of the country to comply with the government directive.
-            
-            Registration centres set up by mobile service providers in various parts of the city were, for the better part of yesterday, a hive of activity as mobile phone users rushed to update their details ahead of next week’s deadline.</p>
+            “Please, post here the exact instructions from CA so that we are sure you were, for the better part of yesterday, a hive of activity as mobile phone users rushed to update their details ahead of next week’s deadline.</p>
     </div>
 </section>
 
@@ -97,12 +93,8 @@
                     </div>
                     <ul class="list-group list-group-flush">
                       {% for category in categories %}
-                       <li class="list-group-item">{{Category.name}}</li>
-                      {% endfor %}
-                    <!-- <li class="list-group-item">All posted projects</li>
-                      <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Vestibulum at eros</li> -->
+                       <li class="list-group-item">{{category.name}}</li>
+                      {% endfor %}      <!-- Note that category.name is in small letters -->  
                       <li class="list-group-item">
                         <a href="{% url 'add' %}" class="btn btn-outline-success my-6 my-sm-0">Post a project for rating</a>
                       </li>
@@ -111,6 +103,7 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
+                  {% for project in projects %}
                   <div class="col-md-4">
                     <div class="card">
                       <img class="image-thumbail" src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)" alt="Card image cap">
@@ -123,46 +116,7 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="col-md-4">
-                    <div class="card">
-                      <img class="image-thumbail" src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)" alt="Card image cap">
-                     
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                       
-                        <a href="{% url 'project' 5 %}" class="btn btn-outline-success btn-sm m-1">View the project</a>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="col-md-4">
-                    <div class="card">
-                      <img class="image-thumbail" src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)" alt="Card image cap">
-                     
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                       
-                        <a href="{% url 'project' 5 %}" class="btn btn-outline-success btn-sm m-1">View the project</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="card">
-                      <img class="image-thumbail" src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)" alt="Card image cap">
-                     
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                       
-                        <a href="{% url 'project' 5 %}" class="btn btn-outline-success btn-sm m-1">View the project</a>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
             </div>
         </div>
