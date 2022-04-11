@@ -96,10 +96,13 @@
                       Posted Git Projects
                     </div>
                     <ul class="list-group list-group-flush">
-                    <li class="list-group-item">All posted projects</li>
+                      {% for category in categories %}
+                       <li class="list-group-item">{{Category.name}}</li>
+                      {% endfor %}
+                    <!-- <li class="list-group-item">All posted projects</li>
                       <li class="list-group-item">Cras justo odio</li>
                       <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
+                      <li class="list-group-item">Vestibulum at eros</li> -->
                       <li class="list-group-item">
                         <a href="{% url 'add' %}" class="btn btn-outline-success my-6 my-sm-0">Post a project for rating</a>
                       </li>
