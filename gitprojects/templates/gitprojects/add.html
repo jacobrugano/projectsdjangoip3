@@ -35,7 +35,14 @@
                           <label> Select a category</label>
                           <select name="category" class="form-control">
                           <option value="none">Select a project category</option>
+
+     <!-- code to give a select options of the categories using their IDs and names -->
+                          {% for category in categories%}
+                          <option value="{{category.id}}">{{category.name}}</option>
+                          {% endfor %}
                         </select>
+
+                        
                         </div>
                     </form>
 

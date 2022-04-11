@@ -14,4 +14,5 @@ def viewProject(request, pk):
 
 
 def addProject(request):
-    return render(request, 'gitprojects/add.html')
+    categories = Category.objects.all()
+    return render(request, 'gitprojects/add.html', {'categories':categories})
