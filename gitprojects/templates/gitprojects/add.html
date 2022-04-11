@@ -13,10 +13,22 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <div class="card">Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
-
-
-
+                <div class="card">
+                    <form>
+                        <div class="form-group  m-3">
+                            <!-- m-3 to create margins from the card borders & from content below it-->
+                          <label>Project Description</label>
+                          <input type="text" placeholder="Enter the project details......." class="form-control">
+                        </div>
+                    </form>
+    
+                    <form>
+                        <div class="form-group m-3">
+                          <label>Upload Project</label>
+                          <input type="file" class="form-control-file">
+                        </div>
+                    </form>
+                </div>
                 <div>        
                     <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>
                 </div>
