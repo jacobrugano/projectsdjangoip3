@@ -113,9 +113,8 @@
                         <h6><i>{{project.category.name}}</i></h6>
                                                        <!-- Same as project.category -->
                                                        <br>
-                        <p class="card-text">{{project.description}}</p>
                        
-                        <a href="{% url 'project' project.id %}" class="btn btn-outline-success btn-sm m-1">View the project</a>
+                        <a href="{% url 'project' project.id %}" class="btn btn-outline-success btn-sm m-1">View Project Details</a>
                         <!-- url 'project' project.id bcos remember in the view function, we queried the database with an ID for the project -->
                       </div>
                     </div>
