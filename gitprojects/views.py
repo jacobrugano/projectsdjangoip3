@@ -9,7 +9,8 @@ def gallery(request):
 
 
 def viewProject(request, pk):
-    return render(request, 'gitprojects/project.html')
+    project = Project.objects.get(id=pk)
+    return render(request, 'gitprojects/project.html', {'project':project})
 
 
 def addProject(request):
