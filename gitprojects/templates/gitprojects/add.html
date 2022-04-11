@@ -18,14 +18,32 @@
                         <div class="form-group  m-3">
                             <!-- m-3 to create margins from the card borders & from content below it-->
                           <label>Project Description</label>
-                          <input type="text" placeholder="Enter the project details......." class="form-control">
+                          <input name="description" type="text" placeholder="Enter the project details......." class="form-control">
                         </div>
                     </form>
     
                     <form>
+                        <div class="form-group  m-3">
+                            <!-- m-3 to create margins from the card borders & from content below it-->
+                          <label> <a href="#"></a> Enter your github repository link</label>
+                          <input name="link" type="text" placeholder="Project repository link......." class="form-control">
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group  m-3">
+                          <label> Select a category</label>
+                          <select name="category" class="form-control">
+                          <option value="none">Select a project category</option>
+                        </select>
+                        </div>
+                    </form>
+
+                    <form>
                         <div class="form-group m-3">
+                         <!-- m-3 to create margins from the card borders & from content below it-->
                           <label>Upload Project</label>
-                          <input type="file" class="form-control-file">
+                          <input name="project" type="file" class="form-control-file">
                         </div>
                     </form>
                 </div>
