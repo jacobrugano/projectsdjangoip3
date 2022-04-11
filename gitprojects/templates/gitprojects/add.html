@@ -40,9 +40,7 @@
                           {% for category in categories%}
                           <option value="{{category.id}}">{{category.name}}</option>
                           {% endfor %}
-                        </select>
-
-                        
+                        </select>                     
                         </div>
                     </form>
 
@@ -51,6 +49,13 @@
                          <!-- m-3 to create margins from the card borders & from content below it-->
                           <label>Upload Project</label>
                           <input name="project" type="file" class="form-control-file">
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="form-group  m-3">
+                          <label>Select a project category</label>
+                          <input name="category_new" type="text" placeholder="Select a project category..." class="form-control">
                         </div>
                     </form>
                 </div>
