@@ -119,6 +119,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
+
+
+STATICFILES_DIRS = [ 
+    BASE_DIR / 'static'    # Means we are going into the base directory then finding a file called static
+]
+
+MEDIA_ROOT = BASE_DIR / 'static/images' # Its like instructing django that it should store any photo added by a user,
+                                        #    by going to base directory then to static folder then to images folder
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Used only in production. This code instructs django to always bundle up
+                                        #    all static files added by users into one file then call that file staticfiles
+                                        # This are mainly files such as CSS and JS files
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
