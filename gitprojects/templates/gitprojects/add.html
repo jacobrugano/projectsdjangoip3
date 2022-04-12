@@ -14,11 +14,15 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
-                    <form>
+
+                    <form method="POST" action="" enctype="multiple/form-data">
+                        <!-- enctype="multiple/form-data bcos the form will be uploading files/images. -->
+                        {{% csrf_token %}} <!-- Bcos you can't send a POST request without csrf_token  -->
+
                         <div class="form-group  m-3">
                             <!-- m-3 to create margins from the card borders & from content below it-->
                           <label>Project Description</label>
-                          <input name="description" type="text" placeholder="Enter the project details......." class="form-control">
+                          <input required name="description" type="text" placeholder="Enter the project details......." class="form-control">
                         </div>
                     </form>
     
@@ -26,7 +30,7 @@
                         <div class="form-group  m-3">
                             <!-- m-3 to create margins from the card borders & from content below it-->
                           <label> <a href="#"></a> Enter your github repository link</label>
-                          <input name="link" type="text" placeholder="Project repository link......." class="form-control">
+                          <input required name="link" type="text" placeholder="Project repository link......." class="form-control">
                         </div>
                     </form>
 
@@ -34,7 +38,7 @@
                         <div class="form-group  m-3">
                           <label> Select a category</label>
                           <select name="category" class="form-control">
-                          <option value="none">Select a project category</option>
+                          <option required value="none">Select a project category</option>
 
      <!-- code to give a select options of the categories using their IDs and names -->
                           {% for category in categories%}
@@ -47,17 +51,19 @@
                     <form>
                         <div class="form-group m-3">
                          <!-- m-3 to create margins from the card borders & from content below it-->
-                          <label>Upload Project</label>
-                          <input name="project" type="file" class="form-control-file">
+                          <label >Upload Project</label>
+                          <input required name="project" type="file" class="form-control-file">
                         </div>
                     </form>
 
                     <form>
                         <div class="form-group  m-3">
                           <label>Select a project category</label>
-                          <input name="category_new" type="text" placeholder="Select a project category..." class="form-control">
+                          <input required name="category_new" type="text" placeholder="Select a project category..." class="form-control">
                         </div>
+                        <button type="submit" class="btn btn-primary btn-sm" >Small button</button>
                     </form>
+                    
                 </div>
                 <div>        
                     <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>
