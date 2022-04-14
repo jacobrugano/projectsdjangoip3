@@ -18,6 +18,9 @@ class Project(models.Model):
     image = models.ImageField(null=False, blank=False)
     # description = models.CharField(max_length=200, null=False, blank=False)
     description = models.TextField()
+    likes = models.ManyToManyField(Category, blank=True, related_name='likes')
+    dislikes = models.ManyToManyField(Category, blank=True, related_name='dislikes')
+
 
     @classmethod
     def search_by_title(cls,search_term):
