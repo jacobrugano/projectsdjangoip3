@@ -165,7 +165,7 @@ background-position: center; background-size: cover; position: static;">
                             <button style="background-color: transparent; border: none; box-shadow: 10px;" type="submit">
                             <i class="far fa-thumbs-up"><span>{{project.likes.all.count}}</span></i>
                           </button>
-                          <form action="" method="POST">
+                          <form action="{% url 'like' 1 %}" method="POST">
                           {% csrf_token%}
                           <input type="hidden" name="next" value="{{ request.path }}">
                           <button style="background-color: transparent; border: none; box-shadow:none;" type="submit">
@@ -177,7 +177,7 @@ background-position: center; background-size: cover; position: static;">
                             <i class="far fa-thumbs-up"><span>{{project.dislikes.all.count}}</span></i>
                           </button>
 
-                          <form action="" method="POST">
+                          <form action="{% url 'dislike' 1 %}" method="POST">
                           {% csrf_token%}
                           <input type="hidden" name="next" value="{{ request.path }}">
                           <button style="background-color: transparent; border: none; box-shadow:none;" type="submit">

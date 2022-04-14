@@ -83,61 +83,61 @@ def search_results(request):
 
 
 class AddLike(LoginRequiredMixin, View):
-    def post(self, request, pk, *args, **kwargs):
-        post = Project.objects.get(pk=pk)
+    def project(self, request, pk, *args, **kwargs):
+        project = Project.objects.get(pk=pk)
 
         is_dislike = False
 
-        for dislike in post.dislikes.all():
+        for dislike in project.dislikes.all():
             if dislike == request.user:
                 is_dislike = True
                 break
 
         if is_dislike:
-            post.dislikes.remove(request.user)
+            project.dislikes.remove(request.user)
 
         is_like = False
 
-        for like in post.likes.all():
+        for like in project.likes.all():
             if like == request.user:
                 is_like = True
                 break
 
         if not is_like:
-            post.likes.add(request.user)
+            project.likes.add(request.user)
 
         if is_like:
-            post.likes.remove(request.user)
+            project.likes.remove(request.user)
 
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
 
 class AddDislike(LoginRequiredMixin, View):
-    def post(self, request, pk, *args, **kwargs):
-        post = Project.objects.get(pk=pk)
+    def project(self, request, pk, *args, **kwargs):
+        project = Project.objects.get(pk=pk)
 
         is_like = False
 
-        for like in post.likes.all():
+        for like in project.likes.all():
             if like == request.user:
                 is_like = True
                 break
 
         if is_like:
-            post.likes.remove(request.user)
+            project.likes.remove(request.user)
 
         is_dislike = False
 
-        for dislike in post.dislikes.all():
+        for dislike in project.dislikes.all():
             if dislike == request.user:
                 is_dislike = True
                 break
 
         if not is_dislike:
-            post.dislikes.add(request.user)
+            project.dislikes.add(request.user)
 
         if is_dislike:
-            post.dislikes.remove(request.user)
+            project.dislikes.remove(request.user)
 
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
