@@ -19,5 +19,10 @@ class Project(models.Model):
     # description = models.CharField(max_length=200, null=False, blank=False)
     description = models.TextField()
 
+    @classmethod
+    def search_by_title(cls,search_term):
+        category = cls.objects.filter(title__icontains=search_term)
+        return category
+
     def __str__(self):
         return self.description

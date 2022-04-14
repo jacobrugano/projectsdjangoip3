@@ -17,7 +17,7 @@
 
                     <form method="POST" action="" enctype="multiple/form-data">
                         <!-- enctype="multiple/form-data bcos the form will be uploading files/images. -->
-                        {{% csrf_token %}} <!-- Bcos you can't send a POST request without csrf_token  -->
+                        {% csrf_token %} <!-- Bcos you can't send a POST request without csrf_token  -->
 
                         <div class="form-group  m-3">
                             <!-- m-3 to create margins from the card borders & from content below it-->
