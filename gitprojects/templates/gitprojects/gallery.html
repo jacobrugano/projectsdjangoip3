@@ -167,16 +167,19 @@ background-position: center; background-size: cover; position: static;">
                           </button>
                           <form action="" method="POST">
                           {% csrf_token%}
+                          <input type="hidden" name="next" value="{{ request.path }}">
                           <button style="background-color: transparent; border: none; box-shadow:none;" type="submit">
                             <i class="far fa-thumbs-down"> <span>{{project.likes.all.count}}</span> </i>
                           </button>
                   </li>
                   <li class="list-group-item">Content<br>                          
                             <button style="background-color: transparent; border: none; box-shadow: 10px;" type="submit">
-                            <i class="far fa-thumbs-up"><span>{{project.likes.all.count}}</span></i>
+                            <i class="far fa-thumbs-up"><span>{{project.dislikes.all.count}}</span></i>
                           </button>
+
                           <form action="" method="POST">
                           {% csrf_token%}
+                          <input type="hidden" name="next" value="{{ request.path }}">
                           <button style="background-color: transparent; border: none; box-shadow:none;" type="submit">
                             <i class="far fa-thumbs-down"> <span>{{project.likes.all.count}}</span> </i>
                           </button>
