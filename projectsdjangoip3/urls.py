@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('gitprojects.urls')),
     #  url(r'^accounts/', include('registration.backends.simple.urls')),
+    path('authentication/', include('django.contrib.auth.urls')),
+    path('authentication/', include('authentication.urls')),
     
 ]
 

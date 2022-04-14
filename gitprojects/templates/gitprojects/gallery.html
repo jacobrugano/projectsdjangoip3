@@ -35,13 +35,24 @@
           <div class="navbar-header">
             <a class="navbar-brand" >Awwards</a>
           </div>
+          <div>
+            <ul>
+              <li class="nav-item">
+                <a class="btn btn-dark my-2 my-sm-0" href="{% url 'register' %}">Register</a>
+              </li>
+            </ul>
+
+          </div>
     
           <!-- Adding a search form  -->
           <div class="col-sm-4 col-md-4 navbar-right">
     
             <form class="navbar-form" role="search" action=>
-    
+              
+   
               <div class="input-group">
+
+                
                 <input type="text" class="form-control" placeholder="Search Project" name="article">
                 <div class="input-group-btn">
                   <button class="btn btn-dark my-2 my-sm-0" type="submit"> <a href="#search"></a>Search</button>
