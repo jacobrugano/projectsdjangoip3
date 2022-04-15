@@ -33,25 +33,27 @@
       <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" >Awwards</a>
+            <a class="navbar-brand" style="color: white;">Awwards</a>
           </div>
-          <!-- div for register -->
-          <div>
-            <ul>
-              <li class="nav-item">
+          {% if user.is_authenticated %}
+    <!-- div for logout icon -->
+            <div>
+              <a class="btn btn-dark my-2 my-sm-0" href="{% url 'logout' %}">Logout</a>
+            </div>
+          {% else %}
+              <div>
                 <a class="btn btn-dark my-2 my-sm-0" href="{% url 'register' %}">Register</a>
-              </li>
-            </ul>
-          </div>
-          <!-- div for login -->
-          <div>
-            <ul>
-              <li class="nav-item">
+            </div>
+       <!-- div for login -->
+            <div>
                 <a class="btn btn-dark my-2 my-sm-0" href="{% url 'login' %}">Login</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Adding a search form  -->
+            </div>
+          {% endif %}
+          <!-- div for register -->
+
+
+
+                    <!-- Adding a search form  -->
           <div class="col-sm-4 col-md-4 navbar-right">
     
             <form class="navbar-form" role="search" action=>
@@ -60,10 +62,9 @@
               <div class="input-group">
 
                 
-                <input type="text" class="form-control" placeholder="Search Project" name="article">
+                <input type="text" class="form-control" placeholder="Search Project..." name="article">
                 <div class="input-group-btn">
                   <button class="btn btn-dark my-2 my-sm-0" type="submit"> <a href="#search"></a>Search</button>
-
                 </div>
               </div>
     
@@ -84,7 +85,7 @@ background-position: center; background-size: cover; position: static;">
     <br>
     <br>
 
-    
+     {% if user.is_authenticated %}
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -213,6 +214,26 @@ background-position: center; background-size: cover; position: static;">
         </div>
       </div>
     </div>
+    {% else %}
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <h6>You must be logged in to view posted projects, view or rate projects.</h6>
+            </div>
+        </div>
+      </div>
+        <div class="col-8">
+            <p>
+              <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Click to View Projects</a>
+           </p>
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
     <br>
     <br>
 

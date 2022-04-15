@@ -10,6 +10,7 @@
     
 </head>
 <body class="m-5">
+    {% if user.is_authenticated %}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
@@ -72,5 +73,9 @@
 
         </div>
     </div>
+
+    {% else %}
+    <h6>You are not logged in and you know it...!! so stop bypassing in a cheeky way like a hacker!!!</h6>
+    {% endif %}
 </body>
 </html>
