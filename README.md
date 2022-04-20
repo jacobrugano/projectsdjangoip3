@@ -77,7 +77,7 @@ With all environment variables changed to suit your local copy of this repositor
 There are no known bugs currently but pull requests are allowed incase you spot a bug
 
 #### Contact Information
-If you have any question or contributions, please email: jerushaotienocoding@gmail.com
+If you have any question or contributions, please email: jacobrugano@gmail.com
 
 ### License
 MIT License
