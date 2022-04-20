@@ -1,7 +1,7 @@
 from django.urls import path
 # from django.conf.urls import url
 from . import views 
-from .views import AddLike, AddDislike
+from .views import AddLike, AddDislike, UserEditView
 
 urlpatterns = [
     path('', views.gallery, name='gallery'), # Our homepage
@@ -10,4 +10,5 @@ urlpatterns = [
     path('search/', views.search_results, name='search_results'),
     path('post/<int:pk>/like', AddLike.as_view(), name='like'),
     path('post/<int:pk>/dislike', AddDislike.as_view(), name='dislike'),
+    path('edit_profile/', UserEditView.as_view(), name='edit_profile'),
 ]

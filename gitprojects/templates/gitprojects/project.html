@@ -22,16 +22,20 @@
     <div class="card border-primary mb-3" style="box-shadow: 5px 5px 8px #504c4c;">
         <div class="row justify-content-center">
             <div class="col">
-                <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>
                 <div style="height: 90vh;">
                     <img style="max-width: 80%; max-height: 80%; box-shadow: 5px 5px 8px #504c4c;" class="image-thumbail" src="{{project.image.url}}" alt="Card image cap">
                                         <!-- project.image.url will be automatically be linked to the photo.ID cz we 
                                             specified it in the button calling this page                                                                                                                                                                               -->
+                    <br>
+                    <br>
+                    <br>
                     <p> {{project.description}} </p>
                             <!-- Button trigger modal -->
+                        <br>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Rate this Project
                     </button>
+                    <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>
 
                           <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

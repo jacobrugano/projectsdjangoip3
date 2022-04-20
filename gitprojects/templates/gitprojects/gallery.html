@@ -36,10 +36,15 @@
             <a class="navbar-brand" style="color: white;">Awwards</a>
           </div>
           {% if user.is_authenticated %}
+  <!-- div for profile -->
+          <div>
+            <a class="btn btn-dark my-2 my-sm-0" href="{% url 'edit_profile' %}">Edit Profile</a>
+         </div>
     <!-- div for logout icon -->
             <div>
               <a class="btn btn-dark my-2 my-sm-0" href="{% url 'logout' %}">Logout</a>
             </div>
+
           {% else %}
               <div>
                 <a class="btn btn-dark my-2 my-sm-0" href="{% url 'register' %}">Register</a>

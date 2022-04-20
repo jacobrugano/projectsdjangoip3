@@ -5,7 +5,8 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views import View
-
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.views import generic
 
 # Create your views here.
 def gallery(request):
@@ -141,3 +142,8 @@ class AddDislike(LoginRequiredMixin, View):
 
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
+
+class UserEditView(generic.CreateView):
+    form_class = UserChangeForm
+    template_name = 'gitprojects/edit_profile.html'
+    success_url = reverse_lazy('home')
