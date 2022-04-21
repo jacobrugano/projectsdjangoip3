@@ -1,1 +1,1 @@
-web: gunicorn projectsdjangoip3.wsgi --log-file -
+web:gunicorn projectsdjangoip3.wsgi --log-file -
